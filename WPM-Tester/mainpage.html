@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TigerType</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="game">
+        <div id="paragraph" class="paragraph">
+          <em
+            >Test and improve your keyboard skills with this fun and engaging
+            site. As you type, you'll track your speed and accuracy in
+            real-time. Mastering this game will not only boost your typing speed
+            but also enhance your overall efficiency on the keyboard. Challenge
+            yourself, track your progress, and have fun becoming a typing
+            master!</em
+          >
+        </div>
+        <p></p>
+        <div id="input-wrapper">
+          <textarea
+            id="input"
+            autocomplete="off"
+            placeholder="Start typing..."
+          ></textarea>
+          <!-- <span id="accuracy"></span> -->
+        </div>
+      </div>
+      <div id="stats">
+        <p>Time Left: <span id="time">60</span> seconds</p>
+        <p>Characters Typed: <span id="charsTyped">0</span></p>
+        <p>WPM: <span id="wpm">0</span></p>
+        <p>Accuracy: <span id="accuracy">0</span>%</p>
+      </div>
+    </div>
+
+    <div class="header">
+      <a href="#default" class="logo" id="tigerTypeLogo">TigerType</a>
+      <a class="active" href="#info">Info</a>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- For Clicking the TigerType button -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tigerTypeLogo = document.getElementById("tigerTypeLogo");
+        tigerTypeLogo.addEventListener("click", function (event) {
+          location.reload(); // Refresh the page
+        });
+      });
+    </script>
+
+    <!-- For displaying website information -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const infoButton = document.querySelector('.header a[href="#info"]');
+        infoButton.addEventListener("click", function (event) {
+          event.preventDefault();
+          const container = document.querySelector(".container");
+          container.innerHTML =
+            "<p>TigerType is a web-based tool developed by Adwait, Aditya, Moksha, and Atul during the BearHacks Hackathon. It aims to help users improve their typing speed and accuracy through a minimalist, distraction-free design. Unlike many existing typing testers that require account creation and feature cluttered interfaces, TigerType focuses solely on enhancing the typing experience. This makes it an excellent choice for users seeking an efficient and safe typing practice platform. TigerType stands out because it is easy to use, focuses on the needs of the user, and provides a valuable learning tool in a market that lacks such resources.</p>";
+        });
+      });
+    </script>
+  </body>
+</html>
